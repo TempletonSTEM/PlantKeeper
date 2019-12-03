@@ -4,7 +4,7 @@
 #include "TemperatureSensor.h"
 
 // Hardware pin definitions
-const int PinTemperature = 2;
+const int PinTemperature = A0;
 const int PinO2Sensor = 3;
 const int PinCO2Sensor = 4;
 const int PinpHSensor = 5;
@@ -39,6 +39,7 @@ void setup()
 
   // Run the setup for each of the sensors
   TemperatureSetup(PinTemperature);
+  LightSensorSetup(PinLightSensor);
 
   // TODO: Implement all of these sensors
   
@@ -47,7 +48,6 @@ void setup()
   CO2SensorSetup(PinCO2Sensor);
   pHSensorSetup(PinpHSensor);
   AirMoistureSetup(PinAirMoisture);
-  LightSensorSetup(PinLightSensor);
   DoorSensorSetup(PinDoorSensor);
   RainGaugeSetup(PinRainGauge);
   Setup(Pin);
@@ -73,6 +73,8 @@ void loop()
 
   // Run the loop for each of the sensors
   int temperature = TemperatureLoop(PinTemperature);
+  int brightness = LightSensorLoop(PinLightSensor);
+
 
   // TODO: Implement all of these sensors
 
@@ -81,7 +83,6 @@ void loop()
   CO2SensorLoop(PinCO2Sensor);
   pHSensorLoop(PinpHSensor);
   AirMoistureLoop(PinAirMoisture);
-  LightSensorLoop(PinLightSensor);
   DoorSensorLoop(PinDoorSensor);
   RainGaugeLoop(PinRainGauge);
   Loop(Pin);

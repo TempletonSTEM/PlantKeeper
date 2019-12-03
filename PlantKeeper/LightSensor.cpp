@@ -22,9 +22,16 @@ bool LightSetup(int SensorPin)
 // Returns: The current Light, in degrees Celsius, or int.min if it has not been setup yet
 int LightLoop(int SensorPin)
 {
-  // TOOD: Implement this function
+	// TOOD: Implement this function
+	int analogValue;
+ 
+    // read our photocell
+    analogValue = analogRead(SensorPin);
+
+  /* Comment out not i[lemented error
   Serial.println("Light sensor loop not yet implemented");
 
   // Return an error
   return LightError;
+  */
 }

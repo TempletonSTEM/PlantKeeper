@@ -22,7 +22,7 @@ bool TemperatureSetup(int SensorPin)
 // Returns: The current temperature, in degrees Celsius, or int.min if it has not been setup yet
 int TemperatureLoop(int SensorPin)
 {
-  // TOOD: Implement this function
+  // TODO: Implement this function
   
     int analogValue;
     float temperature;
@@ -36,9 +36,11 @@ int TemperatureLoop(int SensorPin)
 	
 	return temperature;
 
-  /*Serial.println("Temperature sensor loop not yet implemented");
+  /* comment out 
+  Serial.println("Temperature sensor loop not yet implemented");
 
   // Return an error
-  return TemperatureError;*/
+  return TemperatureError;
+  */
   
 }
