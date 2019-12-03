@@ -23,8 +23,22 @@ bool TemperatureSetup(int SensorPin)
 int TemperatureLoop(int SensorPin)
 {
   // TOOD: Implement this function
-  Serial.println("Temperature sensor loop not yet implemented");
+  
+    int analogValue;
+    float temperature;
+
+    // read our temperature sensor
+    analogValue = analogRead(SensorPin);
+
+    // convert the 10bit analog value to celcius
+    temperature = float(analogValue) / 1023;
+    temperature = temperature * 500;
+	
+	return temperature;
+
+  /*Serial.println("Temperature sensor loop not yet implemented");
 
   // Return an error
-  return TemperatureError;
+  return TemperatureError;*/
+  
 }
